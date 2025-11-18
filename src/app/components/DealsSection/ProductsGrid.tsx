@@ -20,19 +20,19 @@ function ProductsGrid({ filters, sortBy, overrideProducts }: any) {
       const { categories, brands, rating, minPrice, maxPrice } = filters;
 
       if (categories?.length)
-        list = list.filter((p) => categories.includes(p.category));
+        list = list.filter((p : any) => categories.includes(p.category));
 
       if (brands?.length)
-        list = list.filter((p) => brands.includes(p.brand));
+        list = list.filter((p : any) => brands.includes(p.brand));
 
       if (rating)
-        list = list.filter((p) => p.rating >= rating);
+        list = list.filter((p : any) => p.rating >= rating);
 
       if (minPrice)
-        list = list.filter((p) => p.price >= minPrice);
+        list = list.filter((p : any) => p.price >= minPrice);
 
       if (maxPrice)
-        list = list.filter((p) => p.price <= maxPrice);
+        list = list.filter((p : any) => p.price <= maxPrice);
     }
 
     if (!sortBy) return list;
