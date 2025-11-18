@@ -6,15 +6,29 @@ import ProductsGrid from "../components/DealsSection/ProductsGrid";
 import SortingBar from "../components/DealsSection/SortingBar";
 import Link from "next/link";
 
+/** Minimal product filters shape — extend if your sidebar sends more fields */
+type Filters = {
+  categories?: string[];
+  brands?: string[];
+  rating?: number;
+  minPrice?: number;
+  maxPrice?: number;
+};
+
+/** If you have fixed sort options, you can replace string with union type:
+ * type SortBy = "relevance" | "low-high" | "high-low" | "rating" | "newest";
+ */
+type SortBy = string;
+
 export default function ProductsPage() {
-  const [filters, setFilters] = useState({});
-  const [sortBy, setSortBy] = useState("relevance");
+  const [filters, setFilters] = useState<Filters>({});
+  const [sortBy, setSortBy] = useState<SortBy>("relevance");
 
   // Memoized empty filter object (prevents new {} object every render)
-  const defaultFilters = useMemo(() => ({}), []);
+  const defaultFilters = useMemo<Filters>(() => ({}), []);
 
-  // Stable callbacks
-  const handleFilterChange = useCallback((newFilters) => {
+  // Stable callbacks with proper parameter types
+  const handleFilterChange = useCallback((newFilters: Filters) => {
     setFilters(newFilters);
   }, []);
 
@@ -22,7 +36,7 @@ export default function ProductsPage() {
     setFilters(defaultFilters); // uses memoized object
   }, [defaultFilters]);
 
-  const handleSortChange = useCallback((value) => {
+  const handleSortChange = useCallback((value: SortBy) => {
     setSortBy(value);
   }, []);
 

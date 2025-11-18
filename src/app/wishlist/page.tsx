@@ -1,9 +1,17 @@
 "use client";
-import React from "react";
+
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWishlist } from "../components/context/WishlistContext";
-import { useState, useEffect, useMemo, useCallback } from "react";
+
+/* -------------------- TYPES -------------------- */
+type WishlistItemType = {
+  id: number;
+  title: string;
+  price: number;
+  img: string;
+};
 
 /* -------------------- SKELETON -------------------- */
 const WishlistSkeleton = React.memo(function WishlistSkeleton() {
@@ -22,7 +30,13 @@ const WishlistSkeleton = React.memo(function WishlistSkeleton() {
 });
 
 /* -------------------- WISHLIST ITEM -------------------- */
-const WishlistItem = React.memo(function WishlistItem({ item, onRemove }) {
+const WishlistItem = React.memo(function WishlistItem({
+  item,
+  onRemove,
+}: {
+  item: WishlistItemType;
+  onRemove: (id: number) => void;
+}) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
       <div className="w-full h-48 overflow-hidden rounded-lg">
@@ -67,10 +81,13 @@ export default function WishlistPage() {
 
   const isEmpty = wishlist.length === 0;
 
-  // stable callback to avoid rerenders on items
-  const handleRemove = useCallback((id) => {
-    removeFromWishlist(id);
-  }, [removeFromWishlist]);
+  // typed callback
+  const handleRemove = useCallback(
+    (id: number) => {
+      removeFromWishlist(id);
+    },
+    [removeFromWishlist]
+  );
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 400);
@@ -80,7 +97,6 @@ export default function WishlistPage() {
   return (
     <section className="pt-28 pb-12 bg-gray-50 dark:bg-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
-
         <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
           Your Wishlist ❤️
         </h1>
@@ -105,12 +121,11 @@ export default function WishlistPage() {
         {/* FILLED */}
         {!loading && !isEmpty && (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {wishlist.map((item) => (
+            {wishlist.map((item: WishlistItemType) => (
               <WishlistItem key={item.id} item={item} onRemove={handleRemove} />
             ))}
           </div>
         )}
-
       </div>
     </section>
   );
