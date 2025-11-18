@@ -1,0 +1,47 @@
+.navbarWrapper {
+  @apply bg-white shadow fixed w-full top-0 z-50;
+}
+
+.navbarContainer {
+  @apply container mx-auto px-4 py-4 flex items-center justify-between gap-4;
+}
+
+/* LOGO */
+.logo {
+  @apply text-2xl font-bold text-indigo-600 cursor-pointer whitespace-nowrap;
+}
+
+/* SEARCH BAR */
+.searchBarWrapper {
+  @apply relative hidden md:flex items-center bg-white border border-gray-300 
+         rounded-full px-4 py-2 flex-1 mx-4 shadow-sm;
+}
+
+.searchIcon {
+  @apply text-gray-500 mr-3;
+}
+
+.animatedSearchInput {
+  @apply flex-1 outline-none bg-transparent text-gray-800;
+}
+
+/* RIGHT SECTION */
+.rightSection {
+  @apply flex items-center gap-6;
+}
+
+.cartBtn {
+  @apply flex items-center gap-2 text-gray-700 hover:text-indigo-600 font-medium;
+}
+
+.loginBtn {
+  @apply flex items-center gap-1 bg-blue-600 hover:bg-blue-700 
+         text-white px-4 py-2 rounded-md transition;
+}
+
+/* HIDE SEARCH BAR ON MOBILE */
+@media (max-width: 768px) {
+  .searchBarWrapper {
+    display: none;
+  }
+}

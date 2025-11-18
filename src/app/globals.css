@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- SHIMMER SKELETON --- */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e6e6e6;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 250%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(0);
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
+}
+
+/* small helper */
+.skeleton-text { height: 12px; border-radius: 6px; background: #f0f0f0; }
+.skeleton-title { height: 18px; border-radius: 6px; background: #eaeaea; }
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Animated Gradient Background */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-bgMove {
+  background-size: 200% 200%;
+  animation: bgMove 12s ease infinite;
+}
+
+/* Floating Shapes */
+.floating {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.4;
+}
+.floating-1 {
+  width: 300px;
+  height: 300px;
+  background: #ff00ff;
+  top: -40px;
+  right: -20px;
+  animation: float1 8s infinite alternate;
+}
+.floating-2 {
+  width: 250px;
+  height: 250px;
+  background: #00e1ff;
+  bottom: -30px;
+  left: -40px;
+  animation: float2 10s infinite alternate;
+}
+.floating-3 {
+  width: 200px;
+  height: 200px;
+  background: #ff8c00;
+  top: 40%;
+  left: 10%;
+  animation: float3 9s infinite alternate;
+}
+
+@keyframes float1 { from { transform: translateY(0);} to { transform: translateY(40px);} }
+@keyframes float2 { from { transform: translateX(0);} to { transform: translateX(50px);} }
+@keyframes float3 { from { transform: scale(1);} to { transform: scale(1.2);} }
+
+/* Input Fields */
+.inputField {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  color: white;
+  outline: none;
+}
+.inputField::placeholder {
+  color: #e5e5e5;
+}
+.inputField:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #fff;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Floating Shapes */
+.floating {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.15);
+  filter: blur(30px);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.floating-1 {
+  top: 10%;
+  left: 10%;
+}
+.floating-2 {
+  bottom: 15%;
+  right: 20%;
+}
+.floating-3 {
+  top: 40%;
+  right: 10%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-40px) translateX(40px); }
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-bgMove {
+  animation: bgMove 12s ease infinite;
+}
+
+/* Input Field */
+.inputField {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.navbarWrapper {
+  @apply bg-white shadow fixed w-full top-0 z-50;
+}
+
+.navbarContainer {
+  @apply container mx-auto px-4 py-4 flex items-center justify-between gap-4;
+}
+
+/* LOGO */
+.logo {
+  @apply text-xl sm:text-2xl font-bold text-indigo-600 cursor-pointer whitespace-nowrap;
+}
+
+/* SEARCH BAR (HIDDEN ON MOBILE) */
+.searchBarWrapper {
+  @apply hidden md:flex items-center flex-1 bg-white border border-gray-300 rounded-full px-4 py-2 mx-4 shadow-sm;
+}
+
+.searchIcon {
+  @apply text-gray-500 mr-3;
+}
+
+.animatedSearchInput {
+  @apply flex-1 outline-none bg-transparent text-gray-800;
+}
+
+/* RIGHT SECTION */
+.rightSection {
+  @apply flex items-center gap-6;
+}
+
+.loginBtn {
+  @apply flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition whitespace-nowrap;
+}
+
+/* ===== MOBILE MENU OVERLAY ===== */
+.mobileMenuOverlay {
+  @apply fixed inset-0 bg-black/50 z-50 flex justify-end;
+}
+
+/* ===== MOBILE SLIDE PANEL ===== */
+.mobileMenuPanel {
+  @apply bg-white w-72 h-full p-6 shadow-xl transform transition-transform duration-300;
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.mobileItem {
+  @apply block text-gray-700 text-lg font-medium hover:text-indigo-600 transition;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
