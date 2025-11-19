@@ -45,7 +45,7 @@ export const featuredProducts = [
     price: 1899,
     oldPrice: 3499,
     rating: 4.5,
-    img: "/images/Gaming Keyboard.webp",
+    img: "/images/GamingKeyboard.webp",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ export const featuredProducts = [
     price: 1499,
     oldPrice: 2999,
     rating: 4.2,
-    img: "/images/Smart Fitness Band.webp",
+    img: "/images/SmartFitnessBand.webp",
   },
   {
     id: 8,

@@ -6,7 +6,7 @@ export default function CollectionsSection() {
   const collections = [
     {
       title: "Fashion Picks",
-      largeImg: "/images/Fashion Picks2.webp",
+      largeImg: "/images/FashionPicks2.webp",
       largeText: "Trending Styles",
       smallImgs: [
         "/images/FashionPicks.webp",
@@ -24,10 +24,10 @@ export default function CollectionsSection() {
     },
     {
       title: "Home Essentials",
-      largeImg: "/images/Home Essentials.webp",
+      largeImg: "/images/HomeEssentials.webp",
       largeText: "Must-Have Items",
       smallImgs: [
-        "/images/Home Essentials2.webp",
+        "/images/HomeEssentials2.webp",
         "/images/home.webp",
       ],
     },
