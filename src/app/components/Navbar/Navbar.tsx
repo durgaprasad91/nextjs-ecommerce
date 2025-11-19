@@ -106,7 +106,9 @@ function Navbar() {
 
           <SearchSuggestions
             suggestions={suggestions}
-            onSelect={goToSearch}
+            onSelect={() => {
+              setSearchQuery("");
+            }}
           />
         </div>
 

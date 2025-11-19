@@ -16,7 +16,7 @@ function SearchSuggestions({ suggestions, onSelect }: Props) {
       {suggestions.map((item) => (
         <Link
           key={item}
-          href={`/search?query=${encodeURIComponent(item)}`}
+          href={`/search?q=${encodeURIComponent(item)}`}
           onClick={onSelect}
           className="block px-3 py-2 hover:bg-gray-100 text-gray-700 rounded"
         >
@@ -27,5 +27,4 @@ function SearchSuggestions({ suggestions, onSelect }: Props) {
   );
 }
 
-// Prevents unnecessary re-renders when parent updates
 export default memo(SearchSuggestions);
