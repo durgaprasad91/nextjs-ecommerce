@@ -83,10 +83,10 @@ export const allProducts = [
     brand: "Lenovo",
     description:
       "RGB-backlit gaming keyboard with mechanical keys and fast response.",
-    img: "/images/Gaming Keyboard.webp",
+    img: "/images/GamingKeyboard.webp",
     images: [
-      "/images/Gaming Keyboard.webp",
-      "/images/Gaming Keyboard.webp",
+      "/images/GamingKeyboard.webp",
+      "/images/GamingKeyboard.webp",
     ],
   },
 
@@ -114,10 +114,10 @@ export const allProducts = [
     brand: "Puma",
     description:
       "Stylish men's analog watch with premium build and long battery life.",
-    img: "/images/Smart Fitness Band.webp",
+    img: "/images/SmartFitnessBand.webp",
     images: [
-      "/images/Smart Fitness Band.webp",
-      "/images/Smart Fitness Band.webp",
+      "/images/SmartFitnessBand.webp",
+      "/images/SmartFitnessBand.webp",
     ],
   },
 ];
