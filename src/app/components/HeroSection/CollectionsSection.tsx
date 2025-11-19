@@ -10,7 +10,7 @@ export default function CollectionsSection() {
       largeText: "Trending Styles",
       smallImgs: [
         "/images/FashionPicks.webp",
-        "/images/sunglasses.webp",
+        "/images/Sunglasses.webp",
       ],
     },
     {
