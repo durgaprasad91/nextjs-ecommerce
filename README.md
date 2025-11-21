@@ -121,34 +121,6 @@ src/
 * Buy Now option (dummy)
 * Product specifications section
 * Related products section
-
----
-
-## 🚀 Deployment Guide (Vercel)
-
-### 1️⃣ Push project to GitHub
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <repo-url>
-git push -u origin main
-```
-
-### 2️⃣ Login to Vercel (with GitHub)
-
-### 3️⃣ Create New Project → Import Repo
-
-### 4️⃣ Auto-detected: Next.js
-
-### 5️⃣ Add Image Domains in `next.config.js`
-
-### 6️⃣ Click **Deploy**
-
-Done! 🎉
-
 ---
 
 ## ⚡ Performance Optimizations Applied
@@ -159,16 +131,6 @@ Done! 🎉
 * Prevented re-renders using `React.memo`
 * Removed unnecessary dependencies
 * Avoided inline functions where possible
-
----
-
-## 🧪 Future Enhancements (Optional)
-
-* Authentication (Login/Register)
-* Checkout + Payment Page
-* Admin Panel (Add/Edit Products)
-* Database integration (MongoDB / Supabase)
-* API-based product data
 
 ---
 
